@@ -5,6 +5,8 @@ import { Listing } from "./Listing";
 import { ListingsGrid } from "./ListingsGrid";
 
 export function Listings({ listings }: { listings: IList[] }) {
+  if (!listings.length) return null;
+
   return (
     <ListingsGrid>
       {listings.map((listing) => (

@@ -2,7 +2,7 @@ import React from "react";
 import { LoadingSpinner } from "../components/LoadingSpinner";
 import { IData } from "../types/types";
 
-export default function withLoader(Element: React.ComponentType, url: string) {
+export default function withLoader(Element, url: string) {
   return (props) => {
     /* Add logic to:
     1. Fetch data from the url that was passed as an argument.

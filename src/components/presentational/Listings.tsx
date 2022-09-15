@@ -1,21 +1,12 @@
-import React from 'react';
-import { Listing } from './Listing';
-import { ListingsGrid } from './ListingsGrid';
+import React from "react";
+import type { IData } from "../../types/types";
+import { Listing } from "./Listing";
+import { ListingsGrid } from "./ListingsGrid";
 
-export default function Listings() {
-  const [data, setData] = React.useState(null);
-
-  React.useEffect(() => {
-    fetch('https://house-lydiahallie.vercel.app/api/listings')
-      .then((res) => res.json())
-      .then((res) => setData(res));
-  }, []);
-
-  if (!data) return null;
-
+export default function Listings({ listings }: IData) {
   return (
     <ListingsGrid>
-      {data.listings.map((listing) => (
+      {listings.map((listing) => (
         <Listing key={listing.id} listing={listing} />
       ))}
     </ListingsGrid>

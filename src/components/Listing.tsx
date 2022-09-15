@@ -1,5 +1,5 @@
 import React from "react";
-import type { IList } from "../../types/types";
+import type { IList } from "../types/types";
 
 export const Listing = ({ listing }: { listing: IList }) => (
   <div

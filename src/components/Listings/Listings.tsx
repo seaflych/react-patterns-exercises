@@ -1,6 +1,6 @@
 import React from "react";
-import withLoader from "../hoc/withLoader";
-import type { IList } from "../types/types";
+import withLoader from "../../hoc/withLoader";
+import type { IList } from "../../types/types";
 import { Listing } from "./Listing";
 import { ListingsGrid } from "./ListingsGrid";
 

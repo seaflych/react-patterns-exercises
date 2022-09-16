@@ -8,13 +8,5 @@ import TemperatureConverter, {
 import { INumberInput } from "./types/types";
 
 export default function App() {
-  // return <Listings />;
-  return (
-    <TemperatureConverter
-      renderKelvin={({ value }: INumberInput) => <Kelvin value={value} />}
-      renderFahrenheit={({ value }: INumberInput) => (
-        <Fahrenheit value={value} />
-      )}
-    />
-  );
+  return <Listings />;
 }

@@ -13,7 +13,3 @@ export interface IList {
 export interface IData {
   listings: IList[];
 }
-
-export interface INumberInput {
-  value: number;
-}

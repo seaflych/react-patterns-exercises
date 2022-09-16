@@ -1,11 +1,12 @@
 import React from "react";
-import withLoader from "../../hoc/withLoader";
-import type { IList } from "../../types/types";
+import useListings from "../../hooks/useListings";
 import { Listing } from "./Listing";
 import { ListingsGrid } from "./ListingsGrid";
 
-export function Listings({ listings }: { listings: IList[] }) {
-  if (!listings.length) return null;
+export default function Listings() {
+  const listings = useListings();
+
+  if (!listings) return null;
 
   return (
     <ListingsGrid>
@@ -15,8 +16,3 @@ export function Listings({ listings }: { listings: IList[] }) {
     </ListingsGrid>
   );
 }
-
-export default withLoader(
-  Listings,
-  "https://house-lydiahallie.vercel.app/api/listings"
-);

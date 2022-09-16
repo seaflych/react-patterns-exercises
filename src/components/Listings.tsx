@@ -1,5 +1,5 @@
 import React from "react";
-import useListings from "../../hooks/useListings";
+import useListings from "../hooks/useListings";
 import { Listing } from "./Listing";
 import { ListingsGrid } from "./ListingsGrid";
 

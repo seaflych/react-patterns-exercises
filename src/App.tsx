@@ -1,12 +1,21 @@
 import * as React from "react";
 import "./style.css";
-import Listings from "./components/Listings/Listings";
-import TemperatureConverter, {
-  Fahrenheit,
-  Kelvin,
-} from "./components/Temprature/TempratureConverter";
-import { INumberInput } from "./types/types";
+import Listings from "./components/Listings";
+import Input from "./components/Input";
 
 export default function App() {
-  return <Listings />;
+  return (
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+        alignItems: "center",
+        padding: "3em",
+      }}
+    >
+      <Input />
+      <Listings />
+    </div>
+  );
 }

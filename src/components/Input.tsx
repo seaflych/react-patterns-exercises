@@ -1,8 +1,9 @@
 import React from "react";
-import useListings from "../hooks/useListings";
+import { useListingsContext } from "../context/ListingsProvider";
 
 export default function Input(props) {
-  const listings = useListings();
+  const listings = useListingsContext();
+
   const [open, setOpen] = React.useState(false);
   const [value, setValue] = React.useState("");
   const toggle = React.useCallback(() => setOpen((state) => !state), []);
@@ -12,13 +13,13 @@ export default function Input(props) {
       <input
         onFocus={toggle}
         onBlur={toggle}
-        onChange={(e) => setValue(e.target.value)}
         className="flyout-input"
         value={value}
+        onChange={(e) => setValue(e.target.value)}
         placeholder="Enter an address, city ,or ZIP code"
         {...props}
       />
-      {open && (
+      {open && listings ? (
         <div className="flyout-list">
           <ul>
             {listings.map((listing) => (
@@ -34,7 +35,7 @@ export default function Input(props) {
             ))}
           </ul>
         </div>
-      )}
+      ) : null}
     </div>
   );
 }

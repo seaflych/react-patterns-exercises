@@ -11,11 +11,11 @@ export function useListingsContext() {
 
 export function ListingsProvider(props) {
   const listings = useListings();
-  if (!listings) return null;
-
-  return (
-    <ListingsContext.Provider value={listings}>
-      {props.children}
-    </ListingsContext.Provider>
-  );
+  if (listings) {
+    return (
+      <ListingsContext.Provider value={listings}>
+        {props.children}
+      </ListingsContext.Provider>
+    );
+  }
 }
